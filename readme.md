@@ -1,0 +1,1 @@
+This project is implemented with https://python-webpack-boilerplate.readthedocs.io/en/latest/setup_with_django/

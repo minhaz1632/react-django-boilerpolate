@@ -37,6 +37,8 @@ module.exports = {
     alias: {
       "~": Path.resolve(__dirname, "../src"),
     },
+    modules: ["node_modules"],
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [

@@ -2,7 +2,6 @@ const Path = require("path");
 const Webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const StylelintPlugin = require("stylelint-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const common = require("./webpack.common.js");
 
@@ -20,7 +19,6 @@ module.exports = merge(common, {
     new StylelintPlugin({
       files: Path.join("src", "**/*.s?(a|c)ss"),
     }),
-    new MiniCssExtractPlugin({ filename: "css/[name].css" }),
   ],
   module: {
     rules: [
@@ -41,15 +39,6 @@ module.exports = merge(common, {
         test: /\.js$/,
         include: Path.resolve(__dirname, "../src"),
         loader: "babel-loader",
-      },
-      {
-        test: /\.s?css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader?sourceMap=true",
-          "postcss-loader",
-          "sass-loader",
-        ],
       },
     ],
   },
